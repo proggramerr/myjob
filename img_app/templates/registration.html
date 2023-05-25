@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="shortcut icon" href="{% static '/img/icons/logo-man.svg' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container _container">
+                <a href="{% url 'main' %}" class="header__logo"><img src="{% static '/img/logo/logo.svg' %}" alt="Логотип"></a>
+                <div class="header__phone">+7 495 790 72 77</div>
+                <nav class="header__menu menu">
+                    <ul class="menu__list">
+                        <li class="menu__item"><a href="{% url 'main' %}" class="menu__link">Главная</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="header__faq"><img src="{% static '/img/icons/faq.svg' %}" alt="FAQ"></a>
+                <div class="header__authorization">
+                    <a href="{% url 'auth' %}" class="header__log-in">Вход</a>
+                    <a href="{% url 'register' %}" class="header__registration">Регистрация</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="page__registration-block registration-block">
+            <div class="registration-block__container _container">
+                <h2 class="registration-block__title">Страница регистрации</h2>
+                <div class="registration-block__category">
+                        <ul class="registration-block__category-list">
+                            <li class="registration-block__category-item">
+                                <button class="registration-block__category-button toggleButton1" onclick="showApplicantForm()">
+                                    <div class="registration-block__category-button-title">Соискатель</div>
+                                    <div class="registration-block__category-underline"></div>
+                                </button>
+                            </li>
+                            <li class="registration-block__category-item">
+                                <button id="toggleButton2" class="registration-block__category-button" onclick="showEmployerForm()">
+                                    <div class="registration-block__category-button-title">Работодатель</div>
+                                    <div class="registration-block__category-underline"></div>
+                                </button>
+                            </li>
+                        </ul>
+                </div>
+                <div class="applicant__body">
+                    <form action="" class="registration-block__form applicant" method="post">
+                        {% csrf_token %}
+                        {{ form.last_name }}
+                        {{ form.first_name }}
+                        {{ form.email }}
+                        {{ form.password1 }}
+                        {{ form.password2 }}
+                        <button class="applicant__btn" type="submit">Зарегистрироваться</button>
+                    </form>
+                </div>
+                <div class="employer__body">
+                    <form action="" class="registration-block__form employer" method="post">
+                        {% csrf_token %}
+                        {{ form_work.inn }}
+                        {{ form_work.city }}
+                        {{ form_work.last_name }}
+                        {{ form_work.first_name }}
+                        {{ form_work.email }}
+                        {{ form_work.password1 }}
+                        {{ form_work.password2 }}
+                        <button class="employer__btn" type="submit">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__container _container">
+                <nav class="footer__menu footer-menu">
+                    <ul class="footer-menu__list">
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Соискателям</div>
+                            <a href="#" class="footer-menu__item-link">Создать резюме</a>
+                            <a href="#" class="footer-menu__item-link">Поиск работы</a>
+                            <a href="#" class="footer-menu__item-link">Работа для студентов</a>
+                            <a href="#" class="footer-menu__item-link">Советы</a>
+                            <a href="#" class="footer-menu__item-link">Каталог профессий</a>
+                            <a href="#" class="footer-menu__item-link">Конструктор резюме</a>
+                            <a href="#" class="footer-menu__item-link">Список компаний по индустриям</a>
+                            <a href="#" class="footer-menu__item-link">Зарплаты по профессиям</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Работодателям</div>
+                            <a href="#" class="footer-menu__item-link">Разместить вакансию</a>
+                            <a href="#" class="footer-menu__item-link">Поиск сотрудников</a>
+                            <a href="#" class="footer-menu__item-link">Стажировки</a>
+                            <a href="#" class="footer-menu__item-link">Тарифы</a>
+                            <a href="#" class="footer-menu__item-link">Советы для работодателей</a>
+                            <a href="#" class="footer-menu__item-link">Каталог резюме</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Партнерам</div>
+                            <a href="#" class="footer-menu__item-link">Реклама на сайте</a>
+                            <a href="#" class="footer-menu__item-link">Реклама вакансий</a>
+                            <a href="#" class="footer-menu__item-link">Интеграционные сервисы</a>
+                            <a href="#" class="footer-menu__item-link">Логотип MyJob</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Myjob</div>
+                            <a href="#" class="footer-menu__item-link">О компании</a>
+                            <a href="#" class="footer-menu__item-link">Новости сервиса</a>
+                            <a href="#" class="footer-menu__item-link">Работа в MyJob</a>
+                            <a href="#" class="footer-menu__item-link">Карта сайта</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Документы</div>
+                            <a href="#" class="footer-menu__item-link">Услуги</a>
+                            <a href="#" class="footer-menu__item-link">Рекламный кабинет</a>
+                            <a href="#" class="footer-menu__item-link">Иные документы</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="footer__copy">© 2023 MyJob</div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        var employerForm = document.querySelector('.employer__body');
+        employerForm.style.display = 'none';
+        function showApplicantForm() {
+          var applicantForm = document.querySelector('.applicant__body');
+          var employerForm = document.querySelector('.employer__body');
+          
+          applicantForm.style.display = 'flex';
+          employerForm.style.display = 'none';
+        }
+      
+        function showEmployerForm() {
+          var applicantForm = document.querySelector('.applicant__body');
+          var employerForm = document.querySelector('.employer__body');
+      
+          applicantForm.style.display = 'none';
+          employerForm.style.display = 'flex';
+        }
+      </script>
+</body>
+</html>

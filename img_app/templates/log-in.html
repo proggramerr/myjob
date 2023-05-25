@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="shortcut icon" href="{% static '/img/icons/logo-man.svg' %}">
+    
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container _container">
+                <a href="{% url 'main' %}" class="header__logo"><img src="{% static '/img/logo/logo.svg' %}" alt="Логотип"></a>
+                <div class="header__phone">+7 495 790 72 77</div>
+                <nav class="header__menu menu">
+                    <ul class="menu__list">
+                        <li class="menu__item"><a href="{% url 'main' %}" class="menu__link">Главная</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="header__faq"><img src="{% static '/img/icons/faq.svg' %}" alt="FAQ"></a>
+                {% if user.is_authenticated %}
+                    <p>Добро пожаловать, {{ user.username }}! | <a href="{% url 'logout' %}">Выход</a></p>
+                {% else %}
+                    <div class="header__authorization">
+                        <a href="{% url 'auth' %}" class="header__log-in">Вход</a>
+                        <a href="{% url 'register' %}" class="header__registration">Регистрация</a>
+                    </div>
+                {% endif %}
+                
+            </div>
+        </header>
+
+        <main class="page__log-in-block log-in-block">
+            <div class="log-in-block__container _container">
+                <h2 class="log-in-block__title">Страница входа</h2>
+                <div class="log-in-block__body">
+                    <form action="" class="log-in-block__form-log-in form-log-in" method="post">
+                        {% csrf_token %}
+                        {{ form.login }}
+                        {{ form.password }}
+                        <button class="form-log-in__btn" type="submit">Войти</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__container _container">
+                <nav class="footer__menu footer-menu">
+                    <ul class="footer-menu__list">
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Соискателям</div>
+                            <a href="#" class="footer-menu__item-link">Создать резюме</a>
+                            <a href="#" class="footer-menu__item-link">Поиск работы</a>
+                            <a href="#" class="footer-menu__item-link">Работа для студентов</a>
+                            <a href="#" class="footer-menu__item-link">Советы</a>
+                            <a href="#" class="footer-menu__item-link">Каталог профессий</a>
+                            <a href="#" class="footer-menu__item-link">Конструктор резюме</a>
+                            <a href="#" class="footer-menu__item-link">Список компаний по индустриям</a>
+                            <a href="#" class="footer-menu__item-link">Зарплаты по профессиям</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Работодателям</div>
+                            <a href="#" class="footer-menu__item-link">Разместить вакансию</a>
+                            <a href="#" class="footer-menu__item-link">Поиск сотрудников</a>
+                            <a href="#" class="footer-menu__item-link">Стажировки</a>
+                            <a href="#" class="footer-menu__item-link">Тарифы</a>
+                            <a href="#" class="footer-menu__item-link">Советы для работодателей</a>
+                            <a href="#" class="footer-menu__item-link">Каталог резюме</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Партнерам</div>
+                            <a href="#" class="footer-menu__item-link">Реклама на сайте</a>
+                            <a href="#" class="footer-menu__item-link">Реклама вакансий</a>
+                            <a href="#" class="footer-menu__item-link">Интеграционные сервисы</a>
+                            <a href="#" class="footer-menu__item-link">Логотип MyJob</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Myjob</div>
+                            <a href="#" class="footer-menu__item-link">О компании</a>
+                            <a href="#" class="footer-menu__item-link">Новости сервиса</a>
+                            <a href="#" class="footer-menu__item-link">Работа в MyJob</a>
+                            <a href="#" class="footer-menu__item-link">Карта сайта</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Документы</div>
+                            <a href="#" class="footer-menu__item-link">Услуги</a>
+                            <a href="#" class="footer-menu__item-link">Рекламный кабинет</a>
+                            <a href="#" class="footer-menu__item-link">Иные документы</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="footer__copy">© 2023 MyJob</div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

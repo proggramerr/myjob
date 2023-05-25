@@ -1,0 +1,242 @@
+body{
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+}
+
+.errorlist {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: red;
+    font-weight: bold;
+  }
+.errorlist li {
+    margin: 0;   
+    padding: 0;
+}
+.auth-form, .auth-form-recovery, .edit-profile-form{
+    /* 807px */
+    min-width: 500px;
+    max-width: 600px;
+    max-height: 1121px;
+    background: rgba(6, 49, 49, 0.7);
+    border-radius: 50px;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%)
+}
+
+.auth-form h1{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-family: Rubik;
+    margin-bottom: 44px;
+}
+
+.auth-form-recovery h1, .edit-profile-form h1{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-family: Rubik;
+}
+
+.oauth-but{
+    display: flex;
+    margin-left: 24px;
+    margin-bottom: 37px;
+}
+
+.oauth-but img{
+    max-width: 72px;
+    max-height: 72px;
+}
+
+.oauth-but a{
+    margin-right: 24px;
+}
+
+.input-form, .input-form1, .input-form2{
+    text-align: center;
+}
+
+.input-form input,.input-form1 input, .input-form2 input, .firname-input input, .username-input input, .description-input input, .birthday-input input{
+    width: 70%;
+    margin-bottom: 64px;
+    padding: 13px 0px 13px 34px;
+    border: 10px;
+    border-color: #99805a;
+    border-radius: 25px;
+    outline: none;
+    font-family: Rubik;
+    color: black;
+    font-size: 25px;
+}
+
+.input-form1 input{
+    margin-bottom: 40px;
+}
+
+.input-form2 input{
+    margin-bottom: 10px;
+}
+
+#pass input{
+    margin-bottom: 9px;
+}
+
+.input-form input::placeholder{
+    font-family: Rubik;
+    color: rgb(134, 134, 134);
+    font-size: 25px
+}
+
+.auth-help{
+    text-align: right;
+    margin-right:25px;
+    margin-top: 12px;
+}
+
+.auth-help a{
+    font-family: Rubik;
+    font-size: 25px;
+    color: beige;
+    text-decoration: none;
+}
+
+.auth-help a:hover{
+    color:#D1A460
+}
+
+.auth-btn, .auth-btn1, .auth-btn2{
+    width: 50%;
+    padding: 10px;
+    background-color: #D1A460;
+    border:none;
+    outline: none;
+    border-radius: 50px;
+    font-family: Rubik;
+    font-size: 50px;
+    color: white;
+    margin-top: 63px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.auth-btn1{
+    font-size: 40px;
+    width: auto;
+    margin-top: 30px;
+}
+
+.auth-btn2{
+    font-size: 40px;
+    width: auto;
+    margin-top: 10px;
+}
+
+.auth-btn:hover{
+    background-color: #99805a;
+}
+
+.error-auth{
+    font-family: Rubik;
+    font-size: 15px;
+    color: red;
+    text-align: center;
+}
+
+.header{
+    max-width: 384px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.header img{
+    max-height: 90px;
+}
+
+h2{
+    text-align: left;
+    color: white;
+    font-family: Rubik;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.code-recovery{
+    margin-bottom:10px;
+}
+
+.avatar-name-form{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.avatar-name-form img {
+    border-radius: 100%;
+
+}
+  
+.avatar-name-form img:hover {
+    cursor: pointer;
+}
+  
+
+.custom-file-upload{
+    margin: 0;
+}
+
+#id_avatar{
+    display: none;
+}
+
+.firname-input{
+    margin-left: 10px;
+}
+
+.firname-input input, .username-input input, .description-input input, .birthday-input input{
+    width: 300px;
+    margin: auto;
+    padding: 13px 5px 13px 13px;
+    font-size: 20px;
+}
+
+.firname-input label{
+    margin-left: 19px;
+}
+
+form input, form label{
+    display: block;
+}
+
+form label{
+    max-width: 390px;
+    margin: 0 auto;
+    font-family: Rubik;
+    color: white;
+    font-size: 25px;
+}
+
+.username-input input, .description-input input, .birthday-input input{
+    margin-bottom: 30px;    
+}
+
+.edit-profile-form{
+    max-width: 650px;
+}
+.username-input input, .description-input input, .birthday-input input{
+    width: 420px;
+}
+
+.info-main-input{
+    width: 420px;
+    margin: 0 auto;
+}
+

@@ -1,0 +1,299 @@
+.page__registration-block {
+    margin-bottom: 100px;
+}
+.registration-block__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    text-transform: uppercase;
+    text-align: center;
+
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.registration-block__category-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.registration-block__category-item {
+}
+.registration-block__category-button {
+    padding: 16px 0;
+    width: 669px;
+    background-color: var(--white);
+}
+.registration-block__category-button-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 19px;
+
+    color: var(--gray);
+
+    transition: all 0.3s ease;
+}
+.registration-block__category-underline {
+    display: none;
+    width: 669px;
+    height: 2px;
+    background-color: var(--green);
+    border-radius: 5px;
+    margin-bottom: -2px;
+
+    transition: all 0.3s ease;
+}
+
+.registration-block__category-button:hover .registration-block__category-button-title {
+    color: var(--green);
+}
+
+.registration-block__category-button:hover .registration-block__category-underline {
+    display: block;
+}
+
+.registration-block__category-button:focus .registration-block__category-button-title {
+    color: var(--green);
+}
+
+.registration-block__category-button:focus .registration-block__category-underline {
+    display: block;
+}
+
+.applicant__body {
+    display: flex;
+    justify-content: center;
+}
+
+.employer__body {
+    display: flex;
+    justify-content: center;
+}
+
+.registration-block__form {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+    border-radius: 10px;
+
+    margin-top: 50px;
+}
+
+.applicant__surname {
+    padding: 16px;
+    width: 386px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+
+.applicant__surname::placeholder {
+    color: var(--gray);
+}
+
+.applicant__name {
+        padding: 16px;
+    width: 386px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+
+.applicant__name::placeholder {
+    color: var(--gray);
+}
+
+.applicant__email {
+        padding: 16px;
+    width: 386px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+
+.applicant__email::placeholder {
+    color: var(--gray);
+}
+
+.applicant__password {
+        padding: 16px;
+    width: 386px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+
+.applicant__password::placeholder {
+    color: var(--gray);
+}
+
+.applicant__btn {
+    background: var(--green);
+    border-radius: 5px;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+
+    padding: 14px 0;
+
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.applicant__btn:hover {
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+}
+
+.employer__inn {
+    padding: 16px;
+    width: 386px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+
+.employer__inn::placeholder {
+    color: var(--gray);
+}
+
+.employer__select-city {
+    padding: 16px;
+    width: 386px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+.employer__surname {
+    padding: 16px;
+    width: 386px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+
+.employer__surname::placeholder {
+    color: var(--gray);
+}
+
+.employer__name {
+    padding: 16px;
+    width: 386px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+
+.employer__name::placeholder {
+    color: var(--gray);
+}
+
+.employer__email {
+    padding: 16px;
+    width: 386px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+
+.employer__email::placeholder {
+    color: var(--gray);
+}
+
+.employer__password {
+    padding: 16px;
+    width: 386px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+
+.employer__password::placeholder {
+    color: var(--gray);
+}
+
+.employer__btn {
+    background: var(--green);
+    border-radius: 5px;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+
+    padding: 14px 0;
+
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.employer__btn:hover {
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+}

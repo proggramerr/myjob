@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyJob</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static '/img/icons/logo-man.svg' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container _container">
+                <a href="{% url 'main' %}" class="header__logo"><img src="{% static '/img/logo/logo.svg' %}" alt="Логотип"></a>
+                <div class="header__phone">+7 495 790 72 77</div>
+                <nav class="header__menu menu">
+                    <ul class="menu__list">
+                        <li class="menu__item"><a href="#point1" class="menu__link">Работа в компании</a></li>
+                        <li class="menu__item"><a href="#point2" class="menu__link">Работа и вакансии</a></li>
+                        <li class="menu__item"><a href="#point3" class="menu__link">Советы</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Создать резюме</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="header__faq"><img src="{% static '/img/icons/faq.svg' %}" alt="FAQ"></a>
+                {% if user.is_authenticated %}
+                    <p>Добро пожаловать, {{ user.username }}! | <a href="{% url 'logout' %}">Выход</a></p>
+                {% else %}
+                    <div class="header__authorization">
+                        <a href="{% url 'auth' %}" class="header__log-in">Вход</a>
+                        <a href="{% url 'register' %}" class="header__registration">Регистрация</a>
+                    </div>
+                {% endif %}
+            </div>
+        </header>
+
+        <div class="btn-up btn-up_hide"></div>
+
+        <main class="page">
+            <div class="page__main-block main-block">
+                <div class="main-block__container _container">
+                    <div class="main-block__body">
+                        <h1 class="main-block__title">Работа найдется для каждого</h1>
+                        <form class="main-block__form" action="" method="get">
+                            <input class="main-block__search" name="search" placeholder="Должность, компания или услуга" type="search">
+                            <select class="main-block__select-category" name="category" id="">
+                                <option value="vacancy">Вакансии</option>
+                                <option value="resume">Резюме</option>
+                                <option value="company">Компании</option>
+                                <option value="services">Услуги</option>
+                                <option value="courses">Курсы</option>
+                            </select>
+                            <select class="main-block__select-city" name="city" id="">
+                                <option value="ussuriysk">Уссурийск</option>
+                                <option value="moscov">Москва</option>
+                                <option value="vladivostok">Владивосток</option>
+                                <option value="khabarovsk">Хабаровск</option>
+                                <option value="krasnodar">Краснодар</option>
+                            </select>
+                            <button class="main-block__button" type="submit">Найти</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="main-block__image">
+                    <img src="{% static '/img/head-image.png' %}" alt="head-image">
+                </div>
+            </div>
+            <div class="vacancies">
+                <div class="vacancies__container _container">
+                    <div class="vacancies__category">
+                        <ul class="vacancies__category-list">
+                            <li class="vacancies__category-item">
+                                <button class="vacancies__category-button toggleButton1">
+                                    <div class="vacancies__category-button-title">Новые вакансии</div>
+                                    <div class="vacancies__category-underline"></div>
+                                </button>
+                            </li>
+                            <li class="vacancies__category-item">
+                                <button class="vacancies__category-button toggleButton2">
+                                    <div class="vacancies__category-button-title">Работа из дома</div>
+                                    <div class="vacancies__category-underline"></div>
+                                </button>
+                            </li>
+                            <li class="vacancies__category-item">
+                                <button class="vacancies__category-button toggleButton3">
+                                    <div class="vacancies__category-button-title">Подработка</div>
+                                    <div class="vacancies__category-underline"></div>
+                                </button>
+                            </li>
+                            <li class="vacancies__category-item">
+                                <button class="vacancies__category-button toggleButton4">
+                                    <div class="vacancies__category-button-title">Работа без опыта</div>
+                                    <div class="vacancies__category-underline"></div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="vacancies__cards">
+                        <ul class="vacancies__cards-list new-vacancies">
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Специалист службы поддержки с техническими знаниями</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Специалист службы поддержки с техническими знаниями</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Специалист службы поддержки с техническими знаниями</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                        </ul>
+                        <ul class="vacancies__cards-list working-home hidden">
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Оператор по продаже страхования от несчастных случаев</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Оператор по продаже страхования от несчастных случаев</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Оператор по продаже страхования от несчастных случаев</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                        </ul>
+                        <ul class="vacancies__cards-list part-time-job hidden">
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Специалист службы поддержки с техническими знаниями</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Специалист службы поддержки с техническими знаниями</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Специалист службы поддержки с техническими знаниями</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                        </ul>
+                        <ul class="vacancies__cards-list without-experience hidden">
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Оператор по продаже страхования от несчастных случаев</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Оператор по продаже страхования от несчастных случаев</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Оператор по продаже страхования от несчастных случаев</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="point1" class="work-in-company">
+                <div class="work-in-company__container _container">
+                    <h2 class="work-in-company__title">Работа в компании</h2>
+                    <div class="work-in-company__block">
+                        <div class="work-in-company__company">
+                            <div class="work-in-company__image"><img src="{% static '/img/rostelecom.png' %}" alt="Ростелеком"></div>
+                            <div class="work-in-company__description">
+                                <div class="work-in-company__description-title">Ростелеком</div>
+                                <div class="work-in-company__description-subtitle">1492 вакансии</div>
+                            </div>
+                        </div>
+                        <a href="#" class="work-in-company__all-vacancies">Все вакансии</a>
+                    </div>
+                    <div class="work-in-company__block-underline"></div>
+                    <div class="vacancies__cards">
+                        <ul class="vacancies__cards-list">
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Специалист службы поддержки с техническими знаниями</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Специалист службы поддержки с техническими знаниями</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                            <li class="vacancies__cards-item">
+                                <a href="#" class="vacancies__cards-title">Специалист службы поддержки с техническими знаниями</a>
+                                <div class="vacancies__cards-money">от 15000 Р / месяц</div>
+                                <div class="vacancies__cards-company">Яндекс</div>
+                                <div class="vacancies__cards-city">Уссурийск</div>
+                                <button class="vacancies__cards-button">Отправить резюме</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="point2" class="vacancies-ussuriysk">
+                <div class="vacancies-ussuriysk__container _container">
+                    <h2 class="vacancies-ussuriysk__title">Работа и вакансии в уссурийске</h2>
+                    <div class="vacancies-ussuriysk__subtitle-profession -subtitle">По профессии</div>
+                    <ul class="vacancies-ussuriysk__list">
+                        <li class="vacancies-ussuriysk__item">
+                            <div class="vacancies-ussuriysk__item-title">Топ-менеджер</div>
+                            <div class="vacancies-ussuriysk__item-money">До 45 000 Р</div>
+                            <div class="vacancies-ussuriysk__item-underline"></div>
+                            <div class="vacancies-ussuriysk__item-counter">45 вакансий</div>
+                        </li>
+                        <li class="vacancies-ussuriysk__item">
+                            <div class="vacancies-ussuriysk__item-title">Топ-менеджер</div>
+                            <div class="vacancies-ussuriysk__item-money">До 45 000 Р</div>
+                            <div class="vacancies-ussuriysk__item-underline"></div>
+                            <div class="vacancies-ussuriysk__item-counter">45 вакансий</div>
+                        </li>
+                        <li class="vacancies-ussuriysk__item">
+                            <div class="vacancies-ussuriysk__item-title">Топ-менеджер</div>
+                            <div class="vacancies-ussuriysk__item-money">До 45 000 Р</div>
+                            <div class="vacancies-ussuriysk__item-underline"></div>
+                            <div class="vacancies-ussuriysk__item-counter">45 вакансий</div>
+                        </li>
+                        <li class="vacancies-ussuriysk__item">
+                            <div class="vacancies-ussuriysk__item-title">Топ-менеджер</div>
+                            <div class="vacancies-ussuriysk__item-money">До 45 000 Р</div>
+                            <div class="vacancies-ussuriysk__item-underline"></div>
+                            <div class="vacancies-ussuriysk__item-counter">45 вакансий</div>
+                        </li>
+                        <li class="vacancies-ussuriysk__item">
+                            <div class="vacancies-ussuriysk__item-title">Топ-менеджер</div>
+                            <div class="vacancies-ussuriysk__item-money">До 45 000 Р</div>
+                            <div class="vacancies-ussuriysk__item-underline"></div>
+                            <div class="vacancies-ussuriysk__item-counter">45 вакансий</div>
+                        </li>
+                        <li class="vacancies-ussuriysk__item">
+                            <div class="vacancies-ussuriysk__item-title">Топ-менеджер</div>
+                            <div class="vacancies-ussuriysk__item-money">До 45 000 Р</div>
+                            <div class="vacancies-ussuriysk__item-underline"></div>
+                            <div class="vacancies-ussuriysk__item-counter">45 вакансий</div>
+                        </li>
+                        <li class="vacancies-ussuriysk__item">
+                            <div class="vacancies-ussuriysk__item-title">Топ-менеджер</div>
+                            <div class="vacancies-ussuriysk__item-money">До 45 000 Р</div>
+                            <div class="vacancies-ussuriysk__item-underline"></div>
+                            <div class="vacancies-ussuriysk__item-counter">45 вакансий</div>
+                        </li>
+                        <li class="vacancies-ussuriysk__item">
+                            <div class="vacancies-ussuriysk__item-title">Топ-менеджер</div>
+                            <div class="vacancies-ussuriysk__item-money">До 45 000 Р</div>
+                            <div class="vacancies-ussuriysk__item-underline"></div>
+                            <div class="vacancies-ussuriysk__item-counter">45 вакансий</div>
+                        </li>
+                        <li class="vacancies-ussuriysk__item">
+                            <div class="vacancies-ussuriysk__item-title">Топ-менеджер</div>
+                            <div class="vacancies-ussuriysk__item-money">До 45 000 Р</div>
+                            <div class="vacancies-ussuriysk__item-underline"></div>
+                            <div class="vacancies-ussuriysk__item-counter">45 вакансий</div>
+                        </li>
+                    </ul>
+                    <div class="vacancies-ussuriysk__subtitle-branch -subtitle">По отрослям</div>
+                    <ul class="vacancies-ussuriysk__cards">
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                    </ul>
+                    <div class="vacancies-ussuriysk__subtitle-chart -subtitle">По графику</div>
+                    <ul class="vacancies-ussuriysk__cards">
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                    </ul>
+                    <div class="vacancies-ussuriysk__subtitle-useful -subtitle">Полезное</div>
+                    <ul class="vacancies-ussuriysk__cards">
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                        <li class="vacancies-ussuriysk__small-card small-card">
+                            <div class="small-card__item"><a href="#">IT</a></div>
+                            <div class="small-card__item"><a href="#">Интернет</a></div>
+                            <div class="small-card__item"><a href="#">Связь</a></div>
+                            <div class="small-card__item"><a href="#">Телеком</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="point3" class="recommendations">
+                <div class="recommendations__container _container">
+                    <h2 class="recommendations__title">Советы</h2>
+                    <div class="recommendations__category">
+                        <ul class="recommendations__category-list">
+                            <li class="recommendations__category-item">
+                                <button class="recommendations__category-button toggleButton1">
+                                    <div class="recommendations__category-button-title">Советы для работодателей</div>
+                                    <div class="recommendations__category-underline"></div>
+                                </button>
+                            </li>
+                            <li class="recommendations__category-item">
+                                <button id="toggleButton2" class="recommendations__category-button">
+                                    <div class="recommendations__category-button-title">Советы для соискателей</div>
+                                    <div class="recommendations__category-underline"></div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="recommendations__cards">
+                        <ul id="new-vacancies" class="recommendations__cards-list">
+                            <li class="recommendations__cards-item recommendations-item">
+                                <div class="recommendations-item__description">
+                                    <div class="recommendations-item__description-body">
+                                        <div class="recommendations-item__description-title">Как проводить собеседование</div>
+                                        <a href="#" class="recommendations-item__description-link">Как проводить собеседование. План идеального собеседования</a>
+                                    </div>
+                                </div>
+                                <img src="{% static '/img/recommendation-image.png' %}" alt="Советы для работодателей">
+                            </li>
+                            <li class="recommendations__cards-item recommendations-item">
+                                <div class="recommendations-item__description">
+                                    <div class="recommendations-item__description-body">
+                                        <div class="recommendations-item__description-title">Как проводить собеседование</div>
+                                        <a href="#" class="recommendations-item__description-link">Как проводить собеседование. План идеального собеседования</a>
+                                    </div>
+                                </div>
+                                <img src="{% static '/img/recommendation-image.png' %}" alt="Советы для работодателей">
+                            </li>
+                            <li class="recommendations__cards-item recommendations-item">
+                                <div class="recommendations-item__description">
+                                    <div class="recommendations-item__description-body">
+                                        <div class="recommendations-item__description-title">Как проводить собеседование</div>
+                                        <a href="#" class="recommendations-item__description-link">Как проводить собеседование. План идеального собеседования</a>
+                                    </div>
+                                </div>
+                                <img src="{% static '/img/recommendation-image.png' %}" alt="Советы для работодателей">
+                            </li>
+                            <li class="recommendations__cards-item recommendations-item">
+                                <div class="recommendations-item__description">
+                                    <div class="recommendations-item__description-body">
+                                        <div class="recommendations-item__description-title">Как проводить собеседование</div>
+                                        <a href="#" class="recommendations-item__description-link">Как проводить собеседование. План идеального собеседования</a>
+                                    </div>
+                                </div>
+                                <img src="{% static '/img/recommendation-image.png' %}" alt="Советы для работодателей">
+                            </li>
+                            <li class="recommendations__cards-item recommendations-item">
+                                <div class="recommendations-item__description">
+                                    <div class="recommendations-item__description-body">
+                                        <div class="recommendations-item__description-title">Как проводить собеседование</div>
+                                        <a href="#" class="recommendations-item__description-link">Как проводить собеседование. План идеального собеседования</a>
+                                    </div>
+                                </div>
+                                <img src="{% static '/img/recommendation-image.png' %}" alt="Советы для работодателей">
+                            </li>
+                            <li class="recommendations__cards-item recommendations-item">
+                                <div class="recommendations-item__description">
+                                    <div class="recommendations-item__description-body">
+                                        <div class="recommendations-item__description-title">Как проводить собеседование</div>
+                                        <a href="#" class="recommendations-item__description-link">Как проводить собеседование. План идеального собеседования</a>
+                                    </div>
+                                </div>
+                                <img src="{% static '/img/recommendation-image.png' %}" alt="Советы для работодателей">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__container _container">
+                <nav class="footer__menu footer-menu">
+                    <ul class="footer-menu__list">
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Соискателям</div>
+                            <a href="#" class="footer-menu__item-link">Создать резюме</a>
+                            <a href="#" class="footer-menu__item-link">Поиск работы</a>
+                            <a href="#" class="footer-menu__item-link">Работа для студентов</a>
+                            <a href="#" class="footer-menu__item-link">Советы</a>
+                            <a href="#" class="footer-menu__item-link">Каталог профессий</a>
+                            <a href="#" class="footer-menu__item-link">Конструктор резюме</a>
+                            <a href="#" class="footer-menu__item-link">Список компаний по индустриям</a>
+                            <a href="#" class="footer-menu__item-link">Зарплаты по профессиям</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Работодателям</div>
+                            <a href="#" class="footer-menu__item-link">Разместить вакансию</a>
+                            <a href="#" class="footer-menu__item-link">Поиск сотрудников</a>
+                            <a href="#" class="footer-menu__item-link">Стажировки</a>
+                            <a href="#" class="footer-menu__item-link">Тарифы</a>
+                            <a href="#" class="footer-menu__item-link">Советы для работодателей</a>
+                            <a href="#" class="footer-menu__item-link">Каталог резюме</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Партнерам</div>
+                            <a href="#" class="footer-menu__item-link">Реклама на сайте</a>
+                            <a href="#" class="footer-menu__item-link">Реклама вакансий</a>
+                            <a href="#" class="footer-menu__item-link">Интеграционные сервисы</a>
+                            <a href="#" class="footer-menu__item-link">Логотип MyJob</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Myjob</div>
+                            <a href="#" class="footer-menu__item-link">О компании</a>
+                            <a href="#" class="footer-menu__item-link">Новости сервиса</a>
+                            <a href="#" class="footer-menu__item-link">Работа в MyJob</a>
+                            <a href="#" class="footer-menu__item-link">Карта сайта</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <div class="footer-menu__item-title">Документы</div>
+                            <a href="#" class="footer-menu__item-link">Услуги</a>
+                            <a href="#" class="footer-menu__item-link">Рекламный кабинет</a>
+                            <a href="#" class="footer-menu__item-link">Иные документы</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="footer__copy">© 2023 MyJob</div>
+            </div>
+        </footer>
+    </div>
+    <script src="{% static '/js/main.js'%}"></script>
+    <script src="{% static '/js/btnup.js'%}"></script>
+</body>
+</html>

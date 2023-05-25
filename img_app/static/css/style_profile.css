@@ -1,0 +1,59 @@
+.profile{
+    max-width: 1275px;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 8vh;
+    font-family: Rubik;
+}
+
+.user-photo img{
+    width: 370px;
+    height: 470px;
+}
+
+.user-info{
+    display:flex;
+    padding-left: 93px;
+    justify-content: space-between;
+}
+
+.main-info ul{
+    padding: 0;
+    margin: 0;
+}
+
+.main-info ul li{
+    list-style: none;
+}
+
+.user-firstname{
+    font-size: 40px;
+}
+
+.user-username, .user-description, .user-birthday{
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.user-username{
+    color: #063131;
+}
+
+.edit{
+    flex-grow: 1;
+    text-align: right;
+}
+
+.edit a{
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    background-color: #D1A460;
+    padding: 13px 42px;
+    border-radius: 50px;
+}
+
+.main-scr{
+    max-width: 300px;
+    text-align: center;
+}

@@ -1,0 +1,519 @@
+/* ---------- MAIN-BLOCK --------------------------------------------------------- */
+.page__main-block {
+    margin-bottom: 100px;
+}
+.main-block {
+    position: relative;
+}
+.main-block__container {
+}
+.main-block__body {
+    padding: 167px 0 224px 0;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-block__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+
+    color: var(--white);
+    margin-bottom: 20px;
+}
+.main-block__form {
+    display: flex;
+}
+.main-block__search {
+    width: 602px;
+    height: 51px;
+    padding: 16px 20px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    border-right: 2px solid var(--gray);
+}
+
+.main-block__search::placeholder {
+    color: var(--gray);
+}
+
+.main-block__select-category {
+    padding: 16px 20px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+
+    border-right: 2px solid var(--gray);
+}
+
+.main-block__select-city {
+    padding: 16px 20px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.main-block__button {
+    margin-left: 10px;
+    padding: 16px 30px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: var(--white);
+
+    background: var(--green);
+    border-radius: 5px;
+    
+    transition: all 0.3s ease;
+}
+
+.main-block__button:hover {
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+}
+
+.main-block__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+/* ---------- VACANCIES --------------------------------------------------------- */
+.vacancies {
+    margin-bottom: 100px;
+}
+.vacancies__container {
+}
+.vacancies__category {
+}
+.vacancies__category-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+.vacancies__category-item {
+}
+.vacancies__category-button {
+    padding: 16px 0;
+    width: 326px;
+    background-color: var(--white);
+}
+
+.vacancies__category-button-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 19px;
+
+    color: var(--gray);
+
+    transition: all 0.3s ease;
+}
+
+.vacancies__category-underline {
+    display: none;
+    width: 326px;
+    height: 2px;
+    background-color: var(--green);
+    border-radius: 5px;
+    margin-bottom: -2px;
+
+    transition: all 0.3s ease;
+}
+
+.vacancies__category-button:hover .vacancies__category-button-title {
+    color: var(--green);
+}
+
+.vacancies__category-button:hover .vacancies__category-underline {
+    display: block;
+}
+
+.vacancies__category-button:focus .vacancies__category-button-title {
+    color: var(--green);
+}
+
+.vacancies__category-button:focus .vacancies__category-underline {
+    display: block;
+}
+
+.vacancies__cards {
+}
+.vacancies__cards-list {
+    display: flex;
+    gap: 156px;
+}
+.vacancies__cards-item {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 40px;
+
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.35);
+    border-radius: 5px;
+}
+.vacancies__cards-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration-line: underline;
+
+    color: var(--dark);
+}
+.vacancies__cards-money {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: var(--gray);
+
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.vacancies__cards-company {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: var(--green);
+
+    margin-bottom: 20px;
+}
+.vacancies__cards-city {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: var(--dark);
+
+    margin-bottom: 50px;
+}
+.vacancies__cards-button {
+    text-align: center;
+
+    background: var(--green);
+    color: var(--white);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    border-radius: 5px;
+
+    padding: 9px;
+
+    transition: all 0.3s ease;
+}
+
+.vacancies__cards-button:hover {
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3); 
+}
+/* ---------- WORK-IN-COMPANY --------------------------------------------------------- */
+.work-in-company {
+    margin-bottom: 100px;
+}
+.work-in-company__container {
+}
+.work-in-company__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    text-transform: uppercase;
+
+    margin-bottom: 50px;
+}
+.work-in-company__block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100px;
+    padding: 20px;
+}
+.work-in-company__company {
+    display: flex;
+    align-items: center;
+}
+.work-in-company__image {
+    margin-right: 15px;
+}
+.work-in-company__description {
+}
+.work-in-company__description-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+}
+.work-in-company__description-subtitle {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+}
+.work-in-company__all-vacancies {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: var(--dark);
+}
+
+.work-in-company__block-underline {
+    width: 1338px;
+    height: 2px;
+    background-color: var(--green);
+    border-radius: 50%;
+
+    margin-bottom: 50px;
+}
+/* ---------- VACANCIES-USSURIYS --------------------------------------------------------- */
+.vacancies-ussuriysk {
+    margin-bottom: 50px;
+}
+.vacancies-ussuriysk__container {
+}
+.vacancies-ussuriysk__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    text-transform: uppercase;
+
+    margin-bottom: 50px;
+}
+/* ---------- PROFESSION --------------------------------------------------------- */
+.vacancies-ussuriysk__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    margin-bottom: 20px;
+}
+.vacancies-ussuriysk__item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    padding: 30px 20px;
+    width: 342px;
+
+    border-left: 4px solid #87DFD6;
+    border-radius: 5px;
+
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.vacancies-ussuriysk__item:hover {
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+}
+
+.vacancies-ussuriysk__item-title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+
+    margin-bottom: 20px;
+}
+.vacancies-ussuriysk__item-money {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: var(--gray);
+
+    margin-bottom: 20px;
+}
+.vacancies-ussuriysk__item-underline {
+    width: 302px;
+    height: 2px;
+    background-color: var(--gray);
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+.vacancies-ussuriysk__item-counter {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: var(--green);
+}
+/* ---------- BRANCH --------------------------------------------------------- */
+.vacancies-ussuriysk__cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.vacancies-ussuriysk__small-card {
+    text-align: center;
+    padding: 40px 0;
+    width: 198px;
+
+    border-radius: 5px;
+    border-left: 3px solid #87DFD6;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.vacancies-ussuriysk__small-card:hover {
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+}
+
+.small-card {
+
+}
+
+.small-card__item a {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: var(--dark);
+
+    transition: all 0.3s ease;
+}
+
+.small-card__item:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.small-card__item a:hover {
+    text-decoration-line: underline;
+    color: var(--green);
+}
+/* ---------- RECOMMENDATIONS --------------------------------------------------------- */
+.recommendations {
+    margin-bottom: 70px;
+}
+.recommendations__container {
+}
+.recommendations__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    text-transform: uppercase;
+
+    margin-bottom: 50px;
+}
+.recommendations__category {
+}
+.recommendations__category-list {
+    display: flex;
+}
+.recommendations__category-item {
+}
+.recommendations__category-button {
+    width: 669px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+
+    padding: 16px 0;
+
+    background-color: var(--white);
+}
+.recommendations__category-button-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: var(--gray);
+
+    margin-bottom: 16px;
+    padding-left: 20px;
+
+    transition: all 0.3s ease;
+}
+.recommendations__category-underline {
+    display: none;
+    width: 669px;
+    height: 2px;
+    background-color: var(--green);
+    border-radius: 5px;
+
+    margin-top: -2px;
+}
+
+.recommendations__category-button:hover .recommendations__category-button-title {
+    color: var(--green);
+}
+
+.recommendations__category-button:hover .recommendations__category-underline {
+    display: block;
+}
+
+.recommendations__category-button:focus .recommendations__category-button-title {
+    color: var(--green);
+}
+
+.recommendations__category-button:focus .recommendations__category-underline {
+    display: block;
+}
+
+.recommendations__cards {
+}
+.recommendations__cards-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.recommendations__cards-item {
+    display: flex;
+    box-shadow: 0px 4px 18px rgba(135, 223, 214, 0.3);
+
+    margin-bottom: 30px;
+}
+.recommendations-item {
+}
+.recommendations-item__description {
+    width: 228px;
+    padding: 30px 10px 0 15px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    border-bottom: 3px solid #87DFD6;
+}
+.recommendations-item__description-body {
+    max-width: 203px;
+}
+.recommendations-item__description-title {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: var(--green);
+
+    margin-bottom: 15px;
+}
+.recommendations-item__description-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: var(--dark);
+    text-decoration: underline;
+}
